@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import tick from ".././assets/tick.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Section = () => {
   const [sliderValue, setSliderValue] = useState(0);
@@ -21,7 +23,11 @@ const Section = () => {
   const handleSliderChange = (event) => {
     setSliderValue(event.target.value);
   };
-
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+  }, []);
   return (
     <div className="w-73 h-[300px] flex justify-between m-20">
       <div className="w-30 h-[28px] gap-4">
@@ -60,7 +66,10 @@ const Section = () => {
           />
         </div>
       </div>
-      <div className="w-[500px] h-23  rounded-2xl bg-white">
+      <div
+        className="w-[500px] h-23  rounded-2xl bg-white "
+        data-aos="fade-left"
+      >
         <div className="w-31 h-15 mt-12 mb-20 gap-4">
           <div className="w-31 h-4 gap-11 flex flex-wrap">
             <div className="w-9 h-4 ml-12 mr-20 text-3xl text-blue font-poppins font-black">

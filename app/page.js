@@ -11,7 +11,15 @@ import Section4 from "./components/Section4";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Calculator from "./components/Calculator";
+import Calculator1 from "./components/Calculator1";
 import Hard from "./components/Hard";
+import Sectiontest from "./components/Sectiontest";
+import Section2test from "./components/Section2test";
+import Section3test from "./components/Section3test";
+import Section4test from "./components/Section4test";
+import Footertest from "./components/Footertest";
+import Hardtest from "./components/Hardtest";
+import Propertytest from "./components/Propertytest";
 
 export default function Home() {
   return (
@@ -20,14 +28,29 @@ export default function Home() {
         <Header />
         <Hero1 />
         <City />
+        {/* <Property /> */}
+        <Propertytest />
+        <Hardtest />
+        <Calculator1 />
+        <Sectiontest />
+        <Section2test />
+
+        <Section3test />
+
+        <Section4test />
+        {/* <Footer /> */}
+        <Footertest />
+        {/*<Header />
+        <Hero />
+        <City /> 
         <Property />
         <Hard />
         <Calculator />
         <Section />
-        <Section2 />
+         <Section2 />
         <Section3 />
         <Section4 />
-        <Footer />
+        <Footer /> */}
       </div>
     </>
   );

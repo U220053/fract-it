@@ -1,10 +1,18 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import hands from ".././assets/Group 41.png";
 import img1 from ".././assets/Group 43.png";
 import img2 from ".././assets/Rectangle 44.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Hard = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+  }, []);
   return (
     <div className="h-[50rem] bg-blue my-20 relative">
       <div className="w-[48.65rem] h-[8.3rem] relative left-[25rem] top-[3.5rem] gap-[1rem] flex flex-col items-center mb-4">
@@ -23,7 +31,10 @@ const Hard = () => {
       {/* <div className="w-[18.5rem] h-[18.23rem] absolute left-[76.2rem] top-[32rem]  bg-lightblue opacity-40"></div> */}
       <div className="h-[36rem] relative">
         <div className="flex flex-row items-center justify-center h-[40rem] gap-12">
-          <div className="w-[16rem] h-[21rem] rounded-2xl bg-green1 flex flex-col items-center justify-center hover:shadow-lg">
+          <div
+            className="w-[16rem] h-[21rem] rounded-2xl bg-green1 flex flex-col items-center justify-center hover:shadow-lg"
+            data-aos="fade-right"
+          >
             <div className="w-full h-full flex flex-col items-center justify-center">
               <Image src={hands} alt="hand" />
               <div className="text-center">
@@ -32,7 +43,7 @@ const Hard = () => {
               </div>
             </div>
           </div>
-          <div className="w-[30rem] h-[30rem] rounded-2xl bg-white  flex flex-col items-center justify-center">
+          <div className="w-[30rem] h-[30rem] rounded-2xl bg-white  flex flex-col items-center justify-center hover:shadow-lg">
             <div className="w-full h-full flex flex-col ">
               <Image
                 src={img2}
@@ -66,7 +77,10 @@ const Hard = () => {
               </div>
             </div>
           </div>
-          <div className="w-[16rem] h-[21rem] rounded-2xl bg-green1 flex flex-col items-center justify-center">
+          <div
+            className="w-[16rem] h-[21rem] rounded-2xl bg-green1 flex flex-col items-center justify-center hover:shadow-lg"
+            data-aos="fade-left"
+          >
             <div className="w-full h-full flex flex-col items-center justify-center">
               <Image src={img1} alt="hand" />
               <div className="text-center">

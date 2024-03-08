@@ -7,7 +7,7 @@ const Header = () => {
       <div className="w-[10rem] h-[2rem] mt-14">
         <Image src={logo} alt="home" />
       </div>
-      <div className="w-[11.25rem] h-[4rem] bg-darkblue rounded-md mt-10">
+      <div className="w-[11.25rem] h-[4rem] bg-darkblue rounded-md mt-10 max-sm:hidden">
         <button></button>
       </div>
     </div>

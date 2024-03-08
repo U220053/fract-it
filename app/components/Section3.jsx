@@ -12,7 +12,7 @@ const Section3 = () => {
         </p>
       </div>
       <div className=" w-[71.71rem] h-[26rem] gap-[6rem] flex flex-row justify-between">
-        <div className="w-1/3 h-[26.14rem] gap-[2.25rem] flex flex-col justify-center items-center ">
+        <div className="w-1/3 h-[26.14rem] gap-[2.25rem] flex flex-col justify-center items-center hover:shadow-lg">
           <div className="w-[17.26rem] h-[16rem] bg-blue2 rounded-lg flex justify-center items-center">
             <Image src={building} alt="home" />
           </div>
@@ -30,7 +30,7 @@ const Section3 = () => {
             </div>
           </div>
         </div>
-        <div className="w-1/3 h-[26.14rem] gap-[2.25rem] flex flex-col justify-center items-center ">
+        <div className="w-1/3 h-[26.14rem] gap-[2.25rem] flex flex-col justify-center items-center hover:shadow-lg ">
           <div className="w-[17.26rem] h-[16rem] bg-green2 rounded-lg flex justify-center items-center">
             <Image src={building2} alt="home" />
           </div>
@@ -48,7 +48,7 @@ const Section3 = () => {
             </div>
           </div>
         </div>
-        <div className="w-1/3 h-[26.14rem] gap-[2.25rem] flex flex-col justify-center items-center ">
+        <div className="w-1/3 h-[26.14rem] gap-[2.25rem] flex flex-col justify-center items-center hover:shadow-lg ">
           <div className="w-[17.26rem] h-[16rem] bg-blue2 rounded-lg flex justify-center items-center">
             <Image src={building3} alt="home" />
           </div>

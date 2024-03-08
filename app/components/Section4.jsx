@@ -3,8 +3,8 @@ import Image from "next/image";
 import img1 from ".././assets/Rectangle 69.png";
 const Section4 = () => {
   return (
-    <div className="w-[74rem] h-[24rem] flex flex-row gap-[5rem] ml-20 mr-20 mt-40 mb-40">
-      <div className="w-[37rem] h-[24.3rem] ">
+    <div className="w-[74rem] h-[24rem] flex flex-row  gap-[5rem] ml-20 mr-20 mt-40 mb-40">
+      <div className="w-[37rem] h-[24.3rem] hover:shadow-lg ">
         <Image src={img1} alt="house" />
       </div>
       <div className="w-[30.8rem] h-[22.47rem] gap-[2.8rem]">
