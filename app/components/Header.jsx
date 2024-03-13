@@ -8,7 +8,13 @@ const Header = () => {
         <Image src={logo} alt="home" />
       </div>
       <div className="w-[11.25rem] h-[4rem] bg-darkblue rounded-md mt-10 max-sm:hidden">
-        <button></button>
+        {/* <button></button> */}
+        <a
+          href="https://fractits-organization.gitbook.io/fractit/"
+          class="inline-block w-full h-full"
+        >
+          <button></button>
+        </a>
       </div>
     </div>
   );

@@ -22,7 +22,22 @@ const Calculator1 = () => {
       currency: "USD",
     });
   };
-
+  function TotalUstdEarned({
+    initialInvestment,
+    annualRentalYield,
+    propertyValueGrowth,
+  }) {
+    const rentalIncome = Number(
+      Number(initialInvestment) * (Number(annualRentalYield) / 100)
+    );
+    const propertyValueAppreciation =
+      initialInvestment * (propertyValueGrowth / 100);
+    const totalUstdEarned =
+      Number(rentalIncome) +
+      Number(propertyValueAppreciation) +
+      Number(initialInvestment);
+    return totalUstdEarned;
+  }
   return (
     <div className="max-w-screen-xl container mx-auto p-6 lg:p-12  bg-blue4">
       <h1 className="font-poppins text-2xl  md:text-4xl font-extrabold">
@@ -47,16 +62,12 @@ const Calculator1 = () => {
             <div className="flex justify-between">
               <p>Initial Investment</p>
               <p className="font-extrabold">
-                USDT {formatUSDTValue(initialInvestment)}
+                USDT {initialInvestment.toFixed(0)}
               </p>
             </div>
 
             <div>
-              {/* <Slider defaultValue={50} aria-label="Default" /> */}
               <Slider
-                // value={initialInvestment}
-                // onChange={handleSliderChange(setInitialInvestment)}
-                // aria-label="Default"
                 min={100}
                 max={100000}
                 defaultValue={(100 + 100000) / 2}
@@ -130,95 +141,23 @@ const Calculator1 = () => {
           </div>
         </div>
         <div>
-          {/* <div className="bg-gray-100 p-6 rounded-lg">
-            <p className="text-xl font-bold mb-4">
-              Projected Investment Return
-            </p>
-            <p className="text-2xl font-bold mb-8">
-              {formatUSDTValue(224188)} in 5 years
-            </p>
-            <div className="flex justify-between items-center mb-4">
-              <div className="flex items-center">
-                <Circle color="black" />
-                <div>
-                  <p>Investment</p>
-                  <p className="font-bold">
-                    {formatUSDTValue(initialInvestment)}
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-center">
-                <Circle color="green" />
-                <div>
-                  <p>Total rental</p>
-                  <p className="font-bold">
-                    {formatUSDTValue(
-                      initialInvestment * (annualRentalYield / 100) * 5
-                    )}
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-center">
-                <Circle color="blue" />
-                <div>
-                  <p>Value appreciation</p>
-                  <p className="font-bold">
-                    {formatUSDTValue(
-                      initialInvestment * (propertyValueGrowth / 100) * 5
-                    )}
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div>
-              <BarChart
-                series={[
-                  {
-                    data: [
-                      initialInvestment,
-                      initialInvestment,
-                      initialInvestment,
-                      initialInvestment,
-                      initialInvestment,
-                    ],
-                    stack: "B",
-                    color: "black",
-                  },
-                  {
-                    data: [
-                      initialInvestment * (annualRentalYield / 100) * 5,
-                      initialInvestment * (annualRentalYield / 100) * 5,
-                      initialInvestment * (annualRentalYield / 100) * 5,
-                      initialInvestment * (annualRentalYield / 100) * 5,
-                      initialInvestment * (annualRentalYield / 100) * 5,
-                    ],
-                    stack: "B",
-                    color: "#40F39A",
-                  },
-                  {
-                    data: [
-                      initialInvestment * (propertyValueGrowth / 100) * 5,
-                      initialInvestment * (propertyValueGrowth / 100) * 5,
-                      initialInvestment * (propertyValueGrowth / 100) * 5,
-                      initialInvestment * (propertyValueGrowth / 100) * 5,
-                      initialInvestment * (propertyValueGrowth / 100) * 5,
-                    ],
-                    stack: "B",
-                    color: "#2253FF",
-                  },
-                ]}
-                width={400}
-                height={200}
-              />
-            </div>
-          </div> */}
           <div className=" gap-[1.18rem] rounded-md bg-bluelight">
             <div className=" flex flex-col justify-center items-center">
               <p className="font-poppins text-2xl font-medium">
                 Projected investment return of
               </p>
+
               <p className="font-poppins text-xl font-extrabold">
-                USDT 224,188 in 5 years
+                USDT{"   "}
+                {Number(
+                  (initialInvestment * (annualRentalYield / 100)).toFixed(0)
+                ) +
+                  Number(initialInvestment.toFixed(0)) +
+                  Number(
+                    (initialInvestment * (propertyValueGrowth / 100)).toFixed(0)
+                  )}
+                {"   "}
+                Number in 5 years
               </p>
             </div>
             <div className="ml-[1rem] mr-[1rem] mt-[4rem]  rounded-md border border-darkblue p-2.5">
@@ -227,21 +166,34 @@ const Calculator1 = () => {
                   <Circle color="black" />
                   <div>
                     <p>Investment</p>
-                    <p className="font-extrabold">USDT 150,100</p>
+                    <p className="font-extrabold">
+                      USDT {initialInvestment.toFixed(0)}
+                    </p>
                   </div>
                 </div>
                 <div className="flex flex-row flex-1 gap-2">
                   <Circle color="green1" />
                   <div>
                     <p>Total rental </p>
-                    <p className="font-extrabold">USDT 150,100</p>
+                    <p className="font-extrabold">
+                      USDT{" "}
+                      {(initialInvestment * (annualRentalYield / 100)).toFixed(
+                        0
+                      )}
+                    </p>
                   </div>
                 </div>
                 <Circle color="darkblue" />
                 <div className="flex flex-row flex-1 gap-2">
                   <div>
                     <p>Value appreciation</p>
-                    <p className="font-extrabold">USDT 150,100</p>
+                    <p className="font-extrabold">
+                      USDT{" "}
+                      {(
+                        initialInvestment *
+                        (propertyValueGrowth / 100)
+                      ).toFixed(0)}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -251,7 +203,6 @@ const Calculator1 = () => {
               <BarChart
                 series={[
                   {
-                    // data: [4, 3, 1, 5, 8],
                     data: [
                       initialInvestment,
                       initialInvestment,
@@ -264,26 +215,21 @@ const Calculator1 = () => {
                   },
                   {
                     data: [
-                      initialInvestment * (annualRentalYield / 100) * 5,
-                      initialInvestment * (annualRentalYield / 100) * 5,
-                      initialInvestment * (annualRentalYield / 100) * 5,
-                      initialInvestment * (annualRentalYield / 100) * 5,
+                      initialInvestment * (annualRentalYield / 100) * 1,
+                      initialInvestment * (annualRentalYield / 100) * 2,
+                      initialInvestment * (annualRentalYield / 100) * 3,
+                      initialInvestment * (annualRentalYield / 100) * 4,
                       initialInvestment * (annualRentalYield / 100) * 5,
                     ],
                     stack: "B",
                     color: "#40F39A",
                   },
                   {
-                    // data: [2, 8, 1, 3, 1],
                     data: [
-                      initialInvestment * (propertyValueGrowth / 100) * 5,
-                      // annualRentalYield,
-                      // annualRentalYield,
-                      // annualRentalYield,
-                      // annualRentalYield,
-                      initialInvestment * (propertyValueGrowth / 100) * 5,
-                      initialInvestment * (propertyValueGrowth / 100) * 5,
-                      initialInvestment * (propertyValueGrowth / 100) * 5,
+                      initialInvestment * (propertyValueGrowth / 100) * 1,
+                      initialInvestment * (propertyValueGrowth / 100) * 2,
+                      initialInvestment * (propertyValueGrowth / 100) * 3,
+                      initialInvestment * (propertyValueGrowth / 100) * 4,
                       initialInvestment * (propertyValueGrowth / 100) * 5,
                     ],
                     stack: "B",

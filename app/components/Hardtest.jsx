@@ -155,7 +155,7 @@ const Hard = () => {
             />
             <div className="m-4">
               <p className="font-bold">
-                1 Bed in Zaya Hameni Tower, Jumeirah Village Circle (W1405)
+                1 Bed in Zaya Hameni Tower, Jumeirah Village Circle
               </p>
             </div>
             <div className="mt-4 mr-4 ml-4 flex flex-row justify-between">

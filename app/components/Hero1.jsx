@@ -39,7 +39,7 @@ const Hero = () => {
               Invest Now
             </button> */}
             <button className="w-full md:w-[16.25rem] h-[3.8rem] rounded-md bg-black text-white font-bold">
-              Invest Now
+              Join Waitlist
             </button>
           </div>
         </div>

@@ -1,0 +1,55 @@
+/* .glass {
+  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(20px); 
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+} */
+.container {
+  position: relative;
+}
+.glass {
+  position: absolute; /* Position it absolute to overlay the container */
+  z-index: 2; /* Ensure it's above the component */
+  top: 0; /* Position it at the top of the container */
+  left: 0; /* Position it at the left of the container */
+  width: 100%; /* Make it cover the entire container */
+  height: 100%; /* Make it cover the entire container */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(10px); /* Increase blur strength */
+
+  border-radius: 20px;
+  /* border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); */
+}
+.text-overlay {
+  position: absolute;
+  z-index: 3; /* Higher z-index to ensure it's on top of the glass effect */
+  top: 50%; /* Adjust this value based on your layout */
+  left: 50%; /* Adjust this value based on your layout */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Center the text horizontally and vertically */
+}
+
+.text-overlay p {
+  color: black; /* Adjust text color */
+  font-size: 20px; /* Adjust font size */
+  font-weight: bold; /* Adjust font weight */
+}
+@media screen and (max-width: 768px) {
+  .text-overlay p {
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+}
