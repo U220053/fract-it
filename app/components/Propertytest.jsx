@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import img1 from ".././assets/property1.webp";
 import property2 from ".././assets/property2.jpg";
@@ -9,6 +10,8 @@ import india from ".././assets/icons8-india-48.png";
 import canada from ".././assets/icons8-canada-48.png";
 import dubai from ".././assets/icons8-united-arab-emirates-48.png";
 import london from ".././assets/icons8-united-kingdom-48.png";
+import Modal from "./Modal";
+import ModalBody from "./ModalBody";
 import "./Property.css";
 
 // Sample data array containing property information
@@ -68,6 +71,17 @@ const properties = [
 ];
 
 const Propertytest = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  // Function to handle opening the modal
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  // Function to handle closing the modal
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="container mx-auto px-4  lg:px-24">
       <div className="flex justify-between items-center my-8">
@@ -75,9 +89,11 @@ const Propertytest = () => {
           Featured Properties
         </h1>
         <div className="border border-gray-400 rounded-md px-4 py-2">
-          <p className="text-sm font-poppins font-bold">
-            EXPLORE ALL PROPERTIES
-          </p>
+          <button onClick={handleOpenModal}>
+            <p className="text-sm font-poppins font-bold">
+              EXPLORE ALL PROPERTIES
+            </p>
+          </button>
         </div>
       </div>
 
@@ -117,7 +133,14 @@ const Propertytest = () => {
                 <div className="text-overlay">
                   <p>{property.text}</p>
                   {index === 0 && (
-                    <button className="bg-blue w-full text-white px-4 py-2 rounded-md font-bold flex justify-center items-center mt-2">
+                    // <button className="bg-blue w-full text-white px-4 py-2 rounded-md font-bold flex justify-center items-center mt-2">
+                    //   Join Waitlist
+                    // </button>
+                    <button
+                      onClick={handleOpenModal}
+                      className="bg-blue w-full text-white px-4 py-2 rounded-md font-bold flex justify-center items-center mt-2"
+                      // className="w-full md:w-[16.25rem] h-[3.8rem] rounded-md bg-black text-white font-bold"
+                    >
                       Join Waitlist
                     </button>
                   )}
@@ -154,6 +177,11 @@ const Propertytest = () => {
           </div>
         ))}
       </div>
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+        {/* Add modal content here */}
+
+        <ModalBody onCloseModal={handleCloseModal} />
+      </Modal>
     </div>
   );
 };

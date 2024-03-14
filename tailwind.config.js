@@ -59,6 +59,7 @@ module.exports = {
       green: " #BCF7E1",
       green1: "#40F39A",
       green2: "#9ff9cc",
+      red: "#FF0000",
     },
   },
   plugins: [],

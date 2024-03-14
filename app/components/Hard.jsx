@@ -33,7 +33,7 @@ const Hard = () => {
         <div className="flex flex-row items-center justify-center h-[40rem] gap-12">
           <div
             className="w-[16rem] h-[21rem] rounded-2xl bg-green1 flex flex-col items-center justify-center hover:shadow-lg"
-            data-aos="fade-right"
+            data-aos="fade-up"
           >
             <div className="w-full h-full flex flex-col items-center justify-center">
               <Image src={hands} alt="hand" />
@@ -79,7 +79,7 @@ const Hard = () => {
           </div>
           <div
             className="w-[16rem] h-[21rem] rounded-2xl bg-green1 flex flex-col items-center justify-center hover:shadow-lg"
-            data-aos="fade-left"
+            data-aos="fade-up"
           >
             <div className="w-full h-full flex flex-col items-center justify-center">
               <Image src={img1} alt="hand" />

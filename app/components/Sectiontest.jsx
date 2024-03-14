@@ -70,7 +70,7 @@ const Sectiontest = () => {
       <div
         // className="w-full md:w-[500px] h-auto rounded-2xl bg-white mt-10 md:mt-0"
         className="w-full md:w-[500px] h-auto rounded-2xl bg-white mt-10 md:mt-0"
-        data-aos="fade-left"
+        data-aos="fade-up"
       >
         <div className="p-6 md:p-8">
           <div className="mb-12">

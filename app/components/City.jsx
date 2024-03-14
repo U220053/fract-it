@@ -13,14 +13,14 @@ const City = () => {
       <div className="flex  justify-between ">
         <div className="flex justify-between">
           <p className="text-3xl font-poppins leading-7 font-black">
-            Change Now By Cities
+            Explore By Cities
           </p>
         </div>
-        <Image src={arrow} alt="home" width={100} />
+        <Image src={arrow} alt="home" class=" max-w-full h-auto" />
       </div>
       <div className="w-full max-w-screen-xl h-auto grid grid-cols-1 md:grid-cols-3 gap-5 mt-10">
         {/* <div className="w-full max-w-screen-xl  gap-5 flex justify-center mt-10 md:mt-0  sm:flex-col sm:m-auto md:flex-row"> */}
-        <div className=" rounded-2xl bg-white flex md:justify-between sm:justify-center">
+        <div className=" rounded-2xl bg-white flex md:justify-between sm:justify-center gap-2">
           <div className="ml-10 mt-2">
             <Image src={dubai} alt="home" width={100} />
           </div>
@@ -33,15 +33,18 @@ const City = () => {
                 {Math.floor(Math.random() * 10) + 1} Properties
               </p>
             </div>
-            <div className="w-full h-2 mt-12 flex flex-row ">
-              <p className="font-poppins text-xs text-blue">Change Now</p>
+            {/* <div className="w-full h-2 mt-12 flex flex-row ">
+              <p className="font-poppins text-xs text-blue">Explore</p>
+              <Image src={arrowsingle} alt="home" width={20} />
+            </div> */}
+            <div className="w-full h-auto mt-12 flex flex-row">
+              <p className="font-poppins text-xs text-blue">Explore</p>
               <Image src={arrowsingle} alt="home" width={20} />
             </div>
           </div>
         </div>
 
-        {/* <div className="rounded-2xl bg-white flex flex-col md:flex-row md:justify-between sm:justify-center"> */}
-        <div className="rounded-2xl bg-white flex md:justify-between sm:justify-center">
+        <div className="rounded-2xl bg-white flex md:justify-between sm:justify-center gap-2">
           <div className="ml-10 mt-2">
             <Image src={sanfransisco} alt="home" width={100} />
           </div>
@@ -56,14 +59,15 @@ const City = () => {
                 {Math.floor(Math.random() * 10) + 1} Properties
               </p>
             </div>
+
             <div className="w-full h-auto mt-12 flex flex-row">
-              <p className="font-poppins text-xs text-blue">Change Now</p>
+              <p className="font-poppins text-xs text-blue">Explore</p>
               <Image src={arrowsingle} alt="home" width={20} />
             </div>
           </div>
         </div>
 
-        <div className=" rounded-2xl bg-white flex md:justify-between sm:justify-center">
+        <div className=" rounded-2xl bg-white flex md:justify-between sm:justify-center gap-5 ">
           <div className="ml-10 mt-2 ">
             <Image src={ny} alt="home" />
           </div>
@@ -78,8 +82,12 @@ const City = () => {
                 {Math.floor(Math.random() * 10) + 1} Properties
               </p>
             </div>
-            <div className="w-full h-2 md:mt-12 sm:mt-12 flex flex-row ">
-              <p className="font-poppins text-xs text-blue">Change Now</p>
+            {/* <div className="w-full h-2 mt-12 flex flex-row ">
+              <p className="font-poppins text-xs text-blue">Explore</p>
+              <Image src={arrowsingle} alt="home" width={20} />
+            </div> */}
+            <div className="w-full h-auto mt-12 flex flex-row">
+              <p className="font-poppins text-xs text-blue">Explore</p>
               <Image src={arrowsingle} alt="home" width={20} />
             </div>
           </div>

@@ -3,15 +3,27 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import house from ".././assets/house.png";
+import Modal from "./Modal";
+import ModalBody from "./ModalBody";
 
 const Hero = () => {
   const [typewriterLoaded, setTypewriterLoaded] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     import("react-typewriter-effect").then(() => {
       setTypewriterLoaded(true);
     });
   }, []);
+  // Function to handle opening the modal
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  // Function to handle closing the modal
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <div className="w-full max-w-screen-xl mx-auto px-6 lg:px-0 bg-bluelight overflow-hidden">
@@ -35,10 +47,10 @@ const Hero = () => {
             </p>
           </div>
           <div>
-            {/* <button className="w-full md:w-auto h-[62px] rounded-md bg-black text-white font-bold">
-              Invest Now
-            </button> */}
-            <button className="w-full md:w-[16.25rem] h-[3.8rem] rounded-md bg-black text-white font-bold">
+            <button
+              onClick={handleOpenModal}
+              className="w-full md:w-[16.25rem] h-[3.8rem] rounded-md bg-black text-white font-bold"
+            >
               Join Waitlist
             </button>
           </div>
@@ -47,6 +59,12 @@ const Hero = () => {
           <Image src={house} alt="home" />
         </div>
       </div>
+      {/* Render the modal only if isModalOpen is true */}
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+        {/* Add modal content here */}
+
+        <ModalBody onCloseModal={handleCloseModal} />
+      </Modal>
     </div>
   );
 };
