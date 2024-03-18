@@ -152,7 +152,9 @@ const Propertytest = () => {
                       Join Waitlist
                     </button>
                   )}
-                  {index !== 0 && <Image src={lock} className="ml-12" />}
+                  {index !== 0 && (
+                    <Image src={lock} className="ml-12" alt="alt" />
+                  )}
                 </div>
                 <div className="flex justify-between items-center mt-4 ">
                   <p className="text-sm font-poppins leading-4 font-bold text-blue-700">
