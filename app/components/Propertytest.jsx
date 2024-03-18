@@ -10,6 +10,7 @@ import india from ".././assets/icons8-india-48.png";
 import canada from ".././assets/icons8-canada-48.png";
 import dubai from ".././assets/icons8-united-arab-emirates-48.png";
 import london from ".././assets/icons8-united-kingdom-48.png";
+import lock from ".././assets/lock.png";
 import Modal from "./Modal";
 import ModalBody from "./ModalBody";
 import "./Property.css";
@@ -115,13 +116,20 @@ const Propertytest = () => {
             <div className="p-4">
               <p className="flex flex-row text-sm font-poppins leading-4 gap-2">
                 {" "}
-                <Image src={img2} alt="home" width="20" height="20" />
+                <Image
+                  src={img2}
+                  alt="home"
+                  width="20"
+                  height="10"
+                  style={{ marginTop: "-5px" }}
+                />
                 {property.value} |
                 <Image
                   src={property.img}
                   alt="home"
                   width="20"
-                  height="20"
+                  height="10"
+                  style={{ marginTop: "-5px" }}
                 />{" "}
                 {property.location} | {property.type}
               </p>
@@ -144,6 +152,7 @@ const Propertytest = () => {
                       Join Waitlist
                     </button>
                   )}
+                  {index !== 0 && <Image src={lock} className="ml-12" />}
                 </div>
                 <div className="flex justify-between items-center mt-4 ">
                   <p className="text-sm font-poppins leading-4 font-bold text-blue-700">

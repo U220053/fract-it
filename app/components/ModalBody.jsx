@@ -3,7 +3,8 @@ import axios from "axios";
 import * as Yup from "yup";
 import Image from "next/image";
 import house from ".././assets/Group 37.png";
-const backendUrl = "http://localhost:4000";
+const backendUrl = "http://54.89.177.81";
+//"http://localhost:4000";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required("Name is required"),

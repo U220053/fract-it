@@ -63,11 +63,27 @@
 // };
 
 //export default Footertest;
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import logo from ".././assets/logo.png";
+import axios from "axios";
+const backendUrl = "http://54.89.177.81";
+//const backendUrl = "http://localhost:4000";
 
 const Footertest = () => {
+  const [email, setEmail] = useState("");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post(`${backendUrl}/api/subscribe`, { email });
+      alert("Successfully subscribed!");
+    } catch (err) {
+      console.error(err);
+      alert("Failed to submit to waitlist");
+    }
+  };
+
   return (
     <div className="flex flex-col items-center justify-center w-full h-auto bg-darkblue text-white pt-12 pb-4">
       {/* <div className="flex flex-wrap md:flex-row justify-center md:justify-between max-w-screen-lg px-4">
@@ -93,13 +109,23 @@ const Footertest = () => {
           </p>
           <p>Stay on top of the latest blog posts, news, and announcements</p>
         </div>
-        <div className="flex flex-row gap-[0.8rem] items-center">
-          <div className="w-full md:w-[21.6rem] h-[4rem] rounded-md border bg-blue border-white flex justify-start mb-4 md:mb-0 md:mr-4 opacity-40">
-            <button className="w-full">Enter Your Email</button>
-          </div>
-          <div className="w-full md:w-[11rem] h-[4rem] gap-[0.5rem] bg-green1 rounded-md text-darkblue flex justify-center items-center">
-            <button className="w-full">SUBSCRIBE</button>
-          </div>
+        <div className="flex flex-row gap-[2rem] items-center">
+          <form onSubmit={handleSubmit} className="flex items-center">
+            {" "}
+            {/* Ensure the form and button are in the same container */}
+            <input
+              type="text"
+              value={email}
+              placeholder="Enter Your Email"
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full md:w-[21.6rem] h-[4rem] rounded-md border bg-blue border-gray1 flex justify-start mb-4 md:mb-0 mr-4  text-white"
+            />
+            <div className="w-full md:w-[11rem] h-[4rem] gap-[0.5rem] bg-green1 rounded-md text-darkblue flex justify-center items-center">
+              <button type="submit" className="w-full">
+                SUBSCRIBE
+              </button>
+            </div>
+          </form>
         </div>
       </div>
 

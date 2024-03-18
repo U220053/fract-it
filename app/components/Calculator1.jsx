@@ -2,13 +2,14 @@
 import React, { useState } from "react";
 import Slider from "@mui/material/Slider";
 import { BarChart } from "@mui/x-charts/BarChart";
+import { VictoryChart, VictoryBar, VictoryAxis } from "victory";
 
 const Circle = ({ color }) => (
   <div className={`w-4 h-4 rounded-full bg-${color}`} />
 );
 
 const Calculator1 = () => {
-  const [initialInvestment, setInitialInvestment] = useState(150100 / 3);
+  const [initialInvestment, setInitialInvestment] = useState(15010 / 3);
   const [propertyValueGrowth, setPropertyValueGrowth] = useState(50);
   const [annualRentalYield, setAnnualRentalYield] = useState(12.5);
 
@@ -16,11 +17,17 @@ const Calculator1 = () => {
     setter(newValue);
   };
 
+  // const formatUSDTValue = (value) => {
+  //   return value.toLocaleString("en-US", {
+  //     style: "currency",
+  //     currency: "USD",
+  //   });
+  // };
   const formatUSDTValue = (value) => {
-    return value.toLocaleString("en-US", {
-      style: "currency",
-      currency: "USD",
-    });
+    if (value >= 1000) {
+      return value / 1000 + "k";
+    }
+    return value;
   };
   function TotalUstdEarned({
     initialInvestment,
@@ -38,6 +45,7 @@ const Calculator1 = () => {
       Number(initialInvestment);
     return totalUstdEarned;
   }
+
   return (
     <div className="max-w-screen-xl container mx-auto p-6 lg:p-12  bg-blue4">
       <h1 className="font-poppins text-2xl  md:text-4xl font-extrabold">
@@ -45,7 +53,7 @@ const Calculator1 = () => {
       </h1>
       <div className="grid grid-cols-1  lg:grid-cols-2 gap-8">
         <div>
-          <h2 className="text-lg font-poppins font-bold mb-4 mt-4">
+          <h2 className="text-lg font-poppins font-bold mb-4 mt-10">
             How much do you want to invest?
           </h2>
           {/* <div className="mb-6">
@@ -69,8 +77,8 @@ const Calculator1 = () => {
             <div>
               <Slider
                 min={100}
-                max={100000}
-                defaultValue={(100 + 100000) / 2}
+                max={10000}
+                defaultValue={(100 + 10000) / 2}
                 value={initialInvestment}
                 onChange={handleSliderChange(setInitialInvestment)}
                 aria-label="Initial Investment"
@@ -134,16 +142,16 @@ const Calculator1 = () => {
           </div>
           <div className=" mt-6">
             <p>
-              All projected values are before any property costs and platform
-              fees, and based on a 5-year holding period. We expect the asset
-              value to grow 30% over the next 5 years.
+              All estimated values are prior to any property expenses and
+              platform fees, and are calculated for a 5-year holding period. We
+              anticipate a 30% increase in asset value over the next 5 years.
             </p>
           </div>
         </div>
         <div>
           <div className=" gap-[1.18rem] rounded-md bg-bluelight">
-            <div className=" flex flex-col justify-center items-center">
-              <p className="font-poppins text-2xl font-medium">
+            <div className=" flex flex-col justify-center items-center ">
+              <p className="font-poppins text-2xl font-medium mt-2">
                 Projected investment return of
               </p>
 
@@ -160,12 +168,12 @@ const Calculator1 = () => {
                 Number in 5 years
               </p>
             </div>
-            <div className="ml-[1rem] mr-[1rem] mt-[4rem]  rounded-md border border-darkblue p-2.5">
+            <div className="ml-[1rem] mr-[1rem] mt-[4rem]  rounded-2xl border border-darkblue p-2.5">
               <div className="flex flex-row justify-center items-center  gap-[1.18rem]">
                 <div className=" flex flex-row flex-1 gap-2">
                   <Circle color="black" />
                   <div>
-                    <p>Investment</p>
+                    <p className="max-sm:text-sm">Investment</p>
                     <p className="font-extrabold">
                       USDT {initialInvestment.toFixed(0)}
                     </p>
@@ -174,7 +182,7 @@ const Calculator1 = () => {
                 <div className="flex flex-row flex-1 gap-2">
                   <Circle color="green1" />
                   <div>
-                    <p>Total rental </p>
+                    <p className="max-sm:text-sm">Total rental </p>
                     <p className="font-extrabold">
                       USDT{" "}
                       {(initialInvestment * (annualRentalYield / 100)).toFixed(
@@ -183,11 +191,12 @@ const Calculator1 = () => {
                     </p>
                   </div>
                 </div>
-                <Circle color="darkblue" />
-                <div className="flex flex-row flex-1 gap-2">
+
+                <div className="flex flex-row flex-1 gap-1">
+                  <Circle color="darkblue" />
                   <div>
-                    <p>Value appreciation</p>
-                    <p className="font-extrabold">
+                    <p className="max-sm:text-sm">Value appreciation</p>
+                    <p className=" font-extrabold">
                       USDT{" "}
                       {(
                         initialInvestment *
@@ -199,7 +208,7 @@ const Calculator1 = () => {
               </div>
             </div>
 
-            <div className="w-full max-w-xl mx-auto mt-6">
+            <div className="w-full max-w-xl mx-auto mt-6 px-4">
               <BarChart
                 series={[
                   {
@@ -237,7 +246,7 @@ const Calculator1 = () => {
                   },
                 ]}
                 className="w-full"
-                height={200}
+                height={250}
               />
             </div>
           </div>

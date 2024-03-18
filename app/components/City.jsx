@@ -13,10 +13,10 @@ const City = () => {
       <div className="flex  justify-between ">
         <div className="flex justify-between">
           <p className="text-3xl font-poppins leading-7 font-black">
-            Explore By Cities
+            Coming Soon By Cities
           </p>
         </div>
-        <Image src={arrow} alt="home" class=" max-w-full h-auto" />
+        {/* <Image src={arrow} alt="home" class=" max-w-full h-auto" /> */}
       </div>
       <div className="w-full max-w-screen-xl h-auto grid grid-cols-1 md:grid-cols-3 gap-5 mt-10">
         {/* <div className="w-full max-w-screen-xl  gap-5 flex justify-center mt-10 md:mt-0  sm:flex-col sm:m-auto md:flex-row"> */}
@@ -34,11 +34,11 @@ const City = () => {
               </p>
             </div>
             {/* <div className="w-full h-2 mt-12 flex flex-row ">
-              <p className="font-poppins text-xs text-blue">Explore</p>
+              <p className="font-poppins text-xs text-blue">Coming Soon</p>
               <Image src={arrowsingle} alt="home" width={20} />
             </div> */}
             <div className="w-full h-auto mt-12 flex flex-row">
-              <p className="font-poppins text-xs text-blue">Explore</p>
+              <p className="font-poppins text-xs text-blue">Coming Soon</p>
               <Image src={arrowsingle} alt="home" width={20} />
             </div>
           </div>
@@ -61,7 +61,7 @@ const City = () => {
             </div>
 
             <div className="w-full h-auto mt-12 flex flex-row">
-              <p className="font-poppins text-xs text-blue">Explore</p>
+              <p className="font-poppins text-xs text-blue">Coming Soon</p>
               <Image src={arrowsingle} alt="home" width={20} />
             </div>
           </div>
@@ -83,11 +83,11 @@ const City = () => {
               </p>
             </div>
             {/* <div className="w-full h-2 mt-12 flex flex-row ">
-              <p className="font-poppins text-xs text-blue">Explore</p>
+              <p className="font-poppins text-xs text-blue">Coming Soon</p>
               <Image src={arrowsingle} alt="home" width={20} />
             </div> */}
             <div className="w-full h-auto mt-12 flex flex-row">
-              <p className="font-poppins text-xs text-blue">Explore</p>
+              <p className="font-poppins text-xs text-blue">Coming Soon</p>
               <Image src={arrowsingle} alt="home" width={20} />
             </div>
           </div>

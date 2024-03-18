@@ -12,7 +12,7 @@ const Header = () => {
         {/* <button></button> */}
         <a
           href="https://fractits-organization.gitbook.io/fractit/"
-          class="inline-block w-full h-full"
+          className="inline-block w-full h-full"
         >
           <button className="font-extrabold flex justify-center items-center px-16 py-5">
             Docs

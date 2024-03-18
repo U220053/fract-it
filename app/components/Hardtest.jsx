@@ -19,7 +19,7 @@ const Hard = () => {
     <div className="w-full bg-blue my-20 pb-20 mx-auto relative p-2">
       <div className="p-8 text-center text-white">
         <p className="font-semibold md:font-extrabold text-2xl md:text-3xl lg:text-5xl mb-8">
-          So, how will you make money?
+          So, how will you generate capital from FNFT?
         </p>
         <p className="font-base text-xl">
           Fractit was built to empower everyone to own and build wealth through
@@ -34,17 +34,22 @@ const Hard = () => {
           <div className="w-full flex flex-col items-center justify-center">
             <Image src={hands} alt="hand" />
             <div className="text-center">
-              <p className="font-bold">Monthly rental income</p>
-              <p>Consistent passive income from monthly rental payments</p>
+              <p className="font-bold">Monthly rental yield</p>
+              <p>
+                Steady passive earnings generated through monthly rental yeilds.
+              </p>
             </div>
           </div>
         </div>
-        <div className=" md:w-1/3 md:h-auto rounded-3xl bg-white flex flex-col items-center justify-center hover:shadow-lg mb-8 md:mb-0">
+        <div
+          className=" md:w-1/3 md:h-auto  bg-white flex flex-col items-center justify-center hover:shadow-lg mb-8 md:mb-0"
+          style={{ borderRadius: "2rem" }}
+        >
           <div className="w-full flex flex-col">
             <Image
               src={img2}
               alt="hand"
-              className="object-cover w-full rounded-t-2xl"
+              className="object-cover w-full rounded-t-3xl"
               width={400}
               //   height={300}
             />
@@ -83,7 +88,8 @@ const Hard = () => {
             <div className="text-center">
               <p className="font-bold">Long term capital appreciation</p>
               <p>
-                Watch your investment grow as the property value appreciates
+                Experience long-term wealth accumulation as your property gains
+                value over time.
               </p>
             </div>
           </div>

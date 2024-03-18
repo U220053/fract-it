@@ -28,29 +28,14 @@ export default function Home() {
         <Header />
         <Hero1 />
         <City />
-        {/* <Property /> */}
         <Propertytest />
         <Hardtest />
         <Calculator1 />
-        <Sectiontest />
+        {/* <Sectiontest /> */}
         <Section2test />
-
         <Section3test />
-
         <Section4test />
-        {/* <Footer /> */}
         <Footertest />
-        {/*<Header />
-        <Hero />
-        <City /> 
-        <Property />
-        <Hard />
-        <Calculator />
-        <Section />
-         <Section2 />
-        <Section3 />
-        <Section4 />
-        <Footer /> */}
       </div>
     </>
   );

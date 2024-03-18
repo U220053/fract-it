@@ -28,9 +28,9 @@ const Hero = () => {
   return (
     <div className="w-full max-w-screen-xl mx-auto px-6 lg:px-0 bg-bluelight overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <div className="ml-10">
+        <div className="md:mx-auto lg:ml-10">
           <div className="mb-8">
-            <p className="text-lg md:text-3xl lg:text-4xl font-poppins leading-normal font-black">
+            <p className="text-xl md:text-3xl lg:text-4xl font-poppins leading-normal font-black">
               Dive into the World of
             </p>
             <div className="typewriter-container text-xl md:text-3xl lg:text-4xl">

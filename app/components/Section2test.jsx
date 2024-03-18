@@ -20,10 +20,10 @@ const Section2test = () => {
     <div className="max-w-screen-xl mx-auto md:mt-32 px-4 sm:px-6 lg:px-6">
       <div className="md:flex md:flex-row md:gap-8">
         <div className="md:w-1/3 mt-12 md:mt-32">
-          <p className="font-poppins text-4xl font-extrabold">
+          <p className="font-poppins text-4xl font-extrabold max-sm:text-center">
             Why Invest with Fractit
           </p>
-          <p className="mt-8">
+          <p className="mt-8 mb-4">
             Build Your Real Estate Investment Portfolio Today with Just $100
           </p>
         </div>
@@ -66,7 +66,7 @@ const Section2test = () => {
             </div>
           </div>
 
-          <div className="md:flex md:flex-row md:gap-4 md:mt-4 md:col-span-3 flex flex-col ">
+          <div className="md:flex md:flex-row gap-4 md:mt-4 md:col-span-3 flex flex-col ">
             <div className="border border-white rounded-lg bg-white flex flex-col justify-center items-center  p-4 md:w-1/2">
               <div className="flex justify-center">
                 <Image src={img3} alt="home" width={100} height={100} />
