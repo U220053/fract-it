@@ -21,7 +21,7 @@ const properties = [
     image: img1,
     location: "Shimla",
     title: "3 BHK Luxury Apartment in Cliffton Valley - Shimla",
-    price: "453 USDT",
+    price: "453 PUSD",
     investors: "347 investors",
     apy: "6.07%",
     treasuryValue: "$18,888.30",
@@ -33,8 +33,8 @@ const properties = [
   {
     image: property2,
     location: "Dubai",
-    title: "2BHK Apartment in Princess Tower - Dubai Marina",
-    price: "2,200 USDT",
+    title: "2 BHK Apartment in Princess Tower - Dubai Marina",
+    price: "2,200 PUSD",
     investors: "215 investors",
     apy: "5.80%",
     treasuryValue: "$21,500.50",
@@ -46,8 +46,8 @@ const properties = [
   {
     image: property3,
     location: "Toronto",
-    title: "1BHK Apartment in 1 BLOOR ST E - Toronto",
-    price: "1,800 USDT",
+    title: "1 BHK Apartment in 1 BLOOR ST E - Toronto",
+    price: "1,800 PUSD",
     investors: "182 investors",
     apy: "5.95%",
     treasuryValue: "$17,200.75",
@@ -59,8 +59,8 @@ const properties = [
   {
     image: property4,
     location: "London",
-    title: "2BHK Apartment in One Park Drive - London",
-    price: "3,500 USDT",
+    title: "2 BHK Apartment in One Park Drive - London",
+    price: "3,500 PUSD",
     investors: "400 investors",
     apy: "6.20%",
     treasuryValue: "$35,000.00",
@@ -98,7 +98,7 @@ const Propertytest = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 rounded-4xl lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 rounded-3xl lg:grid-cols-2 gap-10">
         {/* Map over properties array to render each property */}
         {properties.map((property, index) => (
           <div
@@ -139,7 +139,7 @@ const Propertytest = () => {
               <div className="container">
                 <div className="glass"></div>
                 <div className="text-overlay">
-                  <p>{property.text}</p>
+                  <p className="text-center">{property.text}</p>
                   {index === 0 && (
                     // <button className="bg-blue w-full text-white px-4 py-2 rounded-md font-bold flex justify-center items-center mt-2">
                     //   Join Waitlist
@@ -153,7 +153,11 @@ const Propertytest = () => {
                     </button>
                   )}
                   {index !== 0 && (
-                    <Image src={lock} className="ml-12" alt="alt" />
+                    <Image
+                      src={lock}
+                      className="ml-12 max-sm:ml-10"
+                      alt="alt"
+                    />
                   )}
                 </div>
                 <div className="flex justify-between items-center mt-4 ">

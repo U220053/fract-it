@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Property from "./components/Property";
 import "./globals.css";
-// import Hero from "./components/Hero";
+import Hero from "./components/Hero";
 import Hero1 from "./components/Hero1";
 import City from "./components/City";
 import Section from "./components/Section";
@@ -20,13 +20,15 @@ import Section4test from "./components/Section4test";
 import Footertest from "./components/Footertest";
 import Hardtest from "./components/Hardtest";
 import Propertytest from "./components/Propertytest";
+import Foot from "./components/foot";
 
 export default function Home() {
   return (
     <>
       <div className="w-full bg-gradient-to-r from-green to-blue3">
         <Header />
-        <Hero1 />
+        <Hero />
+        {/* <Hero1 /> */}
         <City />
         <Propertytest />
         <Hardtest />
@@ -35,7 +37,8 @@ export default function Home() {
         <Section2test />
         <Section3test />
         <Section4test />
-        <Footertest />
+        {/* <Footertest /> */}
+        <Foot />
       </div>
     </>
   );

@@ -1,8 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "@mui/material/Slider";
 import { BarChart } from "@mui/x-charts/BarChart";
-import { VictoryChart, VictoryBar, VictoryAxis } from "victory";
 
 const Circle = ({ color }) => (
   <div className={`w-4 h-4 rounded-full bg-${color}`} />
@@ -12,7 +11,22 @@ const Calculator1 = () => {
   const [initialInvestment, setInitialInvestment] = useState(15010 / 3);
   const [propertyValueGrowth, setPropertyValueGrowth] = useState(50);
   const [annualRentalYield, setAnnualRentalYield] = useState(12.5);
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth > 1024); // Assuming large screen width is 1024px, adjust as needed
+    };
+
+    // Initial check
+    handleResize();
+
+    // Event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   const handleSliderChange = (setter) => (event, newValue) => {
     setter(newValue);
   };
@@ -47,11 +61,18 @@ const Calculator1 = () => {
   }
 
   return (
-    <div className="max-w-screen-xl container mx-auto p-6 lg:p-12  bg-blue4">
+    // <div className=" w-full max-w-fit container mx-auto p-6 lg:p-12  bg-blue4 overflow-hidden">
+    <div className=" container mx-auto p-6 lg:p-24  bg-blue4 overflow-hidden">
+      {isLargeScreen && (
+        <React.Fragment>
+          <div className="w-[18.5rem] h-[18.5rem] absolute left-[55rem] top-[-0.2rem] bg-blue5 opacity-20"></div>
+          <div className="w-[17rem] h-[18.5rem] absolute left-[78rem] top-[19.7rem] bg-blue5 opacity-20"></div>
+        </React.Fragment>
+      )}
       <h1 className="font-poppins text-2xl  md:text-4xl font-extrabold">
         Investment Calculator
       </h1>
-      <div className="grid grid-cols-1  lg:grid-cols-2 gap-8">
+      <div className="relative grid grid-cols-1  lg:grid-cols-2 gap-8">
         <div>
           <h2 className="text-lg font-poppins font-bold mb-4 mt-10">
             How much do you want to invest?
@@ -70,7 +91,7 @@ const Calculator1 = () => {
             <div className="flex justify-between">
               <p>Initial Investment</p>
               <p className="font-extrabold">
-                USDT {initialInvestment.toFixed(0)}
+                PUSD {initialInvestment.toFixed(0)}
               </p>
             </div>
 
@@ -149,14 +170,14 @@ const Calculator1 = () => {
           </div>
         </div>
         <div>
-          <div className=" gap-[1.18rem] rounded-md bg-bluelight">
+          <div className=" gap-[1.18rem] rounded-3xl bg-bluelight">
             <div className=" flex flex-col justify-center items-center ">
               <p className="font-poppins text-2xl font-medium mt-2">
                 Projected investment return of
               </p>
 
               <p className="font-poppins text-xl font-extrabold">
-                USDT{"   "}
+                PUSD{"   "}
                 {Number(
                   (initialInvestment * (annualRentalYield / 100)).toFixed(0)
                 ) +
@@ -169,13 +190,13 @@ const Calculator1 = () => {
               </p>
             </div>
             <div className="ml-[1rem] mr-[1rem] mt-[4rem]  rounded-2xl border border-darkblue p-2.5">
-              <div className="flex flex-row justify-center items-center  gap-[1.18rem]">
+              <div className="flex flex-row justify-center items-center  md:gap-[1.18rem]">
                 <div className=" flex flex-row flex-1 gap-2">
                   <Circle color="black" />
                   <div>
                     <p className="max-sm:text-sm">Investment</p>
                     <p className="font-extrabold">
-                      USDT {initialInvestment.toFixed(0)}
+                      PUSD {initialInvestment.toFixed(0)}
                     </p>
                   </div>
                 </div>
@@ -184,7 +205,7 @@ const Calculator1 = () => {
                   <div>
                     <p className="max-sm:text-sm">Total rental </p>
                     <p className="font-extrabold">
-                      USDT{" "}
+                      PUSD{" "}
                       {(initialInvestment * (annualRentalYield / 100)).toFixed(
                         0
                       )}
@@ -197,7 +218,7 @@ const Calculator1 = () => {
                   <div>
                     <p className="max-sm:text-sm">Value appreciation</p>
                     <p className=" font-extrabold">
-                      USDT{" "}
+                      PUSD{" "}
                       {(
                         initialInvestment *
                         (propertyValueGrowth / 100)

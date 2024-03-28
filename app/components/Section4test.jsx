@@ -17,7 +17,7 @@ const Section4test = () => {
     setIsModalOpen(false);
   };
   return (
-    <div className="max-w-screen-xl h-auto mx-auto flex flex-col md:flex-row justify-center items-center md:gap-[5rem] mt-10 md:mt-40 mb-10 md:mb-40">
+    <div className="max-w-screen-xl h-auto mx-auto flex flex-col md:flex-row justify-center items-center md:gap-[5rem] mt-10 md:mt-20 mb-10 md:mb-20 p-4">
       <div className="w-auto h-auto hover:shadow-lg ">
         <Image src={img1} alt="house" />
       </div>
@@ -28,7 +28,7 @@ const Section4test = () => {
           </p>
         </div>
         <div className="w-full h-auto">
-          <p className="font-poppins text-sm lg:text-xl font-medium mt-4 max-sm:mt-2 max-sm:text-center">
+          <p className="font-poppins text-base lg:text-xl font-medium mt-4 max-sm:mt-2 max-sm:text-center">
             Own real estate like a pro, minus the stress. Fractit simplifies
             investing by handling management & vacancy risks. Earn rental income
             or potential profit sharing, even during vacancy periods. Invest

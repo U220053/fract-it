@@ -15,6 +15,7 @@ const Hero = () => {
       setTypewriterLoaded(true);
     });
   }, []);
+
   // Function to handle opening the modal
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -27,16 +28,18 @@ const Hero = () => {
 
   return (
     <div className="w-full max-w-screen-xl mx-auto px-6 lg:px-0 rounded-3xl bg-bluelight overflow-hidden">
-      <div className="grid grid-cols-1 lg:grid-cols-2   items-center">
-        <div className="md:mx-auto lg:ml-10 ">
+      {/* <div className="grid grid-cols-1 lg:grid-cols-2   items-center"> */}
+      <div className="flex flex-col lg:flex-row items-center justify-between ">
+        <div className="md:mx-auto lg:ml-10  lg:max-w-md">
           <div className="mb-8">
-            <p className="text-xl md:text-4xl lg:text-5xl font-poppins leading-normal font-black mb-2">
-              Dive into the World of
-            </p>
-            <div className="typewriter-container text-xl md:text-4xl lg:text-5xl mb-2">
+            <p className="text-xl md:text-4xl lg:text-5xl font-poppins leading-loose font-black mb-2 ">
+              {/* Dive into the World of
               {typewriterLoaded && <TypewriterText />}
-            </div>
-            <p className="text-xl md:text-4xl lg:text-5xl font-poppins leading-normal font-black mb-2">
+              Real Estate Investment */}
+              Dive into the World of{" "}
+              <span className="typewriter-container inline-block">
+                {typewriterLoaded && <TypewriterText />}
+              </span>{" "}
               Real Estate Investment
             </p>
           </div>
@@ -55,8 +58,8 @@ const Hero = () => {
             </button>
           </div>
         </div>
-        {/* lg:h-[520px] lg:w-[680px] */}
-        <div className="relative h-auto  w-full">
+
+        <div className="relative h-auto  w-full ">
           <Image
             src={house}
             alt="home"
@@ -65,10 +68,8 @@ const Hero = () => {
             height={450}
           />
         </div>
-        {/* <div className="relative h-96 lg:h-auto w-full">
-          <Image src={house} alt="home" />
-        </div> */}
       </div>
+
       {/* Render the modal only if isModalOpen is true */}
       <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
         {/* Add modal content here */}

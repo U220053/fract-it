@@ -35,7 +35,7 @@ const Hero = () => {
           <div className="mb-8 ">
             <p className="text-3xl md:text-4xl lg:text-42 font-poppins font-black mb-2 lg:leading-normal">
               Dive into the World of {""}
-              <span className="typewriter-container inline-block  text-3xl md:text-4xl lg:text-42 font-poppins lg:leading-normal font-black text-darkblue relative top-0 left-0">
+              <span className=" typewriter-container inline-block  text-3xl md:text-4xl lg:text-42 font-poppins lg:leading-normal font-black text-darkblue relative top-0 left-0">
                 <ReactTyped
                   strings={[
                     "Frictionless",

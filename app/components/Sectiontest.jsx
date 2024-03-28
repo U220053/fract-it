@@ -50,7 +50,7 @@ const Sectiontest = () => {
             <p>How much do you want to invest?</p>
           </div>
           <div>
-            <p className="font-black">USDT 200</p>
+            <p className="font-black">PUSD 200</p>
           </div>
         </div>
         <div className="w-4/5">
@@ -79,7 +79,7 @@ const Sectiontest = () => {
               <div>
                 <p className="text-sm font-poppins">When you invest</p>
                 <p className="text-lg font-black font-poppins">
-                  USDT 200 or more
+                  PUSD 200 or more
                 </p>
               </div>
             </div>
@@ -88,7 +88,7 @@ const Sectiontest = () => {
             <div className="flex items-center mb-2">
               <Image src={tick} alt="home" />
               <p className="text-sm font-poppins ml-2">
-                USDT 20 for each qualified referral
+                PUSD 20 for each qualified referral
               </p>
             </div>
             <div className="flex items-center mb-2">

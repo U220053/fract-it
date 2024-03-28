@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import hands from ".././assets/Group 41.png";
 import img1 from ".././assets/Group 43.png";
@@ -9,14 +9,33 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Hard = () => {
+  // useEffect(() => {
+  //   AOS.init({
+  //     duration: 2000,
+  //   });
+  // }, []);
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
+
   useEffect(() => {
     AOS.init({
       duration: 2000,
     });
-  }, []);
 
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth > 1024); // Assuming large screen width is 1024px, adjust as needed
+    };
+
+    // Initial check
+    handleResize();
+
+    // Event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
-    <div className="w-full bg-blue my-20 pb-20 mx-auto relative p-2">
+    <div className="w-full bg-blue my-20 pb-20 mx-auto relative p-2 overflow-hidden">
       <div className="p-8 text-center text-white">
         <p className="font-semibold md:font-extrabold text-2xl md:text-3xl lg:text-5xl mb-8">
           So, how will you generate capital from FNFT?
@@ -26,9 +45,23 @@ const Hard = () => {
           real estate
         </p>
       </div>
-      <div className="flex flex-col md:flex-row items-center justify-center gap-12">
+      {isLargeScreen && (
+        <React.Fragment>
+          <div className="w-[18.18rem] h-[18.23rem] absolute left-[18rem] top-[12rem] bg-lightblue opacity-40 "></div>
+          <div className="w-[18.5rem] h-[18.23rem] absolute left-[60rem] top-[12rem] bg-lightblue opacity-40 "></div>
+          <div className="w-[18.5rem] h-[18.23rem] absolute left-[-1rem] top-[32rem]  bg-lightblue opacity-40 "></div>
+          <div className="w-[18.5rem] h-[18.23rem] absolute left-[38rem] top-[32rem]  bg-lightblue opacity-40 "></div>
+          <div className="w-[18.5rem] h-[18.23rem] absolute left-[76.2rem] top-[32rem]  bg-lightblue opacity-40 "></div>
+        </React.Fragment>
+      )}
+      {/* <div className="w-[18.18rem] h-[18.23rem] absolute left-[18rem] top-[12rem] bg-lightblue opacity-40 "></div>
+      <div className="w-[18.5rem] h-[18.23rem] absolute left-[60rem] top-[12rem] bg-lightblue opacity-40 "></div>
+      <div className="w-[18.5rem] h-[18.23rem] absolute left-[-1rem] top-[32rem]  bg-lightblue opacity-40 "></div>
+      <div className="w-[18.5rem] h-[18.23rem] absolute left-[38rem] top-[32rem]  bg-lightblue opacity-40 "></div>
+      <div className="w-[18.5rem] h-[18.23rem] absolute left-[76.2rem] top-[32rem]  bg-lightblue opacity-40 "></div> */}
+      <div className="relative flex flex-col md:flex-row items-center justify-center gap-12">
         <div
-          className="w-1/2 md:w-1/3 md:h-auto rounded-2xl bg-green1 flex flex-col items-center justify-center hover:shadow-lg mb-8 md:mb-0 p-8"
+          className="w-auto sm:w-1/2 md:w-1/3 md:h-auto rounded-2xl bg-green1 flex flex-col items-center justify-center hover:shadow-lg mb-8 md:mb-0 p-8"
           data-aos="fade-up"
         >
           <div className="w-full flex flex-col items-center justify-center">
@@ -60,7 +93,7 @@ const Hard = () => {
             </div>
             <div className="mt-4 mr-4 ml-4 flex flex-row justify-between">
               {" "}
-              <p className="text-darkblue font-extrabold">1,453 USDT </p>{" "}
+              <p className="text-darkblue font-extrabold">1,453 PUSD </p>{" "}
               <p>347 Investors</p>
             </div>
             <div className="m-4 p-4 rounded-xl flex flex-row justify-between bg-lightblue">
@@ -80,7 +113,7 @@ const Hard = () => {
           </div>
         </div>
         <div
-          className="w-1/2  md:w-1/3 md:h-auto rounded-2xl bg-green1 flex flex-col items-center justify-center hover:shadow-lg p-8"
+          className=" w-auto sm:w-1/2  md:w-1/3 md:h-auto rounded-2xl bg-green1 flex flex-col items-center justify-center hover:shadow-lg p-8"
           data-aos="fade-up"
         >
           <div className="w-full  flex flex-col items-center justify-center">
