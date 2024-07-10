@@ -1,10 +1,13 @@
 "use client";
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Image from "next/image";
 import logo from ".././assets/logo.png";
 import facebook from ".././assets/facebook.png";
 import youtube from ".././assets/youtube.png";
-import insta from ".././assets/insta.png";
+import twitter from ".././assets/twitter.png";
+import medium from ".././assets/medium.png";
 
 const Foot = () => {
   const [email, setEmail] = useState("");
@@ -26,10 +29,18 @@ const Foot = () => {
           mode: "no-cors",
         }
       );
-      alert("Successfully subscribed!");
+      // alert("Successfully subscribed!");
+      toast.success("Successfully joined!", {
+        position: "top-center",
+        toastStyle: { marginTop: "2rem" },
+      });
     } catch (err) {
       console.error(err);
-      alert("Failed to submit ");
+      // alert("Failed to submit ");
+      toast.error("Failed to join!", {
+        position: "top-center",
+        toastStyle: { marginTop: "2rem" },
+      });
     } finally {
       setIsSubmitting(false); // Set isSubmitting back to false when submission completes
     }
@@ -44,14 +55,14 @@ const Foot = () => {
           </p>
           <p>Stay on top of the latest blog posts, news, and announcements</p>
         </div>
-        <div className="flex flex-row gap-[2rem] justify-center">
+        <div className="flex flex-row gap-[2rem] justify-center ">
           <form onSubmit={handleSubmit} className="flex ">
             <input
               type="text"
               value={email}
               placeholder="Enter Your Email"
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full md:w-[21.6rem] h-[4rem] rounded-md border bg-blue border-gray1 flex justify-start mb-4 md:mb-0 mr-4  text-white"
+              className="w-full md:w-[21.6rem] h-[4rem] rounded-md border bg-blue border-gray1 flex justify-start mb-4 md:mb-0 mr-4  text-black"
             />
             <div className="w-full md:w-[11rem] h-[4rem] gap-[0.5rem] bg-green1 rounded-md text-darkblue flex justify-center items-center">
               {/* Change button text based on isSubmitting state */}
@@ -80,7 +91,16 @@ const Foot = () => {
           <div>
             <ul>
               <li className="text-green1 mb-2">Learn</li>
-              <li className="mb-2">Blogs</li>
+              <li className="mb-2">
+                {" "}
+                <a
+                  href="https://blog.fractit.com/"
+                  className="text-blue-500 hover:underline"
+                  target="_blank"
+                >
+                  Blogs
+                </a>
+              </li>
               <li className="mb-2">FAQs</li>
               <li className="mb-1">Glossary</li>
             </ul>
@@ -88,11 +108,24 @@ const Foot = () => {
           <div>
             <ul>
               <li className="text-green1 mb-2">Connect with us</li>
-              <li>contact@fractit.com</li>
-              <div className="flex flex-row gap-4 mt-2">
-                <Image src={facebook} alt="fb" />
-                <Image src={youtube} alt="fb" />
-                <Image src={insta} alt="fb" />
+              <li>hello@fractit.com</li>
+              <div className="flex flex-row gap-4 mt-2 ml-5">
+                {/* <Image src={facebook} alt="fb" />
+                <Image src={youtube} alt="fb" /> */}
+                <a
+                  href="https://x.com/FractItLabs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image src={twitter} alt="fb" />
+                </a>
+                <a
+                  href="https://blog.fractit.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image src={medium} alt="youtube" />
+                </a>
               </div>
             </ul>
           </div>
@@ -102,7 +135,7 @@ const Foot = () => {
       <div className="w-full border-t border-gray my-4"></div>
       <div className="w-full flex justify-center px-4">
         <p className="font-poppins text-sm font-medium opacity-40">
-          © 2024 Fractit. All rights reserved.
+          © 2024 Fractit. All rights reserved | Entravy Pvt. Ltd.
         </p>
       </div>
     </div>

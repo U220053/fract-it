@@ -9,7 +9,7 @@ import arrowsingle from ".././assets/arrowsingle.png";
 const City = () => {
   return (
     // <div className="w-full md:w-[75rem] h-[16.83rem] gap-[1.8rem] m-20">
-    <div className="w-full max-w-screen-xl  m-auto px-6 lg:px-0  py-20">
+    <div className="w-full max-w-screen-xl  m-auto px-6 lg:px-0  pt-20 pb-12">
       <div className="flex  justify-between ">
         <div className="flex justify-between">
           <p className="text-3xl font-poppins leading-7 font-black">

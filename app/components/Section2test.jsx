@@ -18,7 +18,7 @@ const Section2test = () => {
 
   return (
     // <div className="max-w-screen-xl mx-auto md:mt-32 px-4 sm:px-6 lg:px-6">
-    <div className=" mx-auto md:mt-20 px-4 lg:px-24">
+    <div className="container mx-auto md:mt-20 px-4 lg:px-24">
       <div className="md:flex md:flex-row md:gap-28">
         <div className="md:w-1/3 mt-12 md:mt-32">
           <p className="font-poppins text-4xl font-extrabold max-sm:text-center">

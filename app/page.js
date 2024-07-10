@@ -21,6 +21,11 @@ import Footertest from "./components/Footertest";
 import Hardtest from "./components/Hardtest";
 import Propertytest from "./components/Propertytest";
 import Foot from "./components/foot";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import GridComponent from "./components/Grid";
+import DataTable from "./components/Grid";
+import Partners from "./components/Partners";
 
 export default function Home() {
   return (
@@ -28,6 +33,7 @@ export default function Home() {
       <div className="w-full bg-gradient-to-r from-green to-blue3">
         <Header />
         <Hero />
+
         {/* <Hero1 /> */}
         <City />
         <Propertytest />
@@ -35,9 +41,12 @@ export default function Home() {
         <Calculator1 />
         {/* <Sectiontest /> */}
         <Section2test />
+        <DataTable />
         <Section3test />
         <Section4test />
+        <Partners />
         {/* <Footertest /> */}
+        <ToastContainer />
         <Foot />
       </div>
     </>

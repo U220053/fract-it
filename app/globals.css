@@ -9,6 +9,9 @@
   --light-blue: #add8e6;
   --dark-blue: #3772ff;
 }
+.gradient-bg {
+  background: linear-gradient(135deg, #bcf7e1, #87cefa);
+}
 /*
 @media (prefers-color-scheme: dark) {
   :root {

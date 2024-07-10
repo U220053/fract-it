@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import hands from ".././assets/Group 41.png";
@@ -93,7 +92,7 @@ const Hard = () => {
             </div>
             <div className="mt-4 mr-4 ml-4 flex flex-row justify-between">
               {" "}
-              <p className="text-darkblue font-extrabold">1,453 PUSD </p>{" "}
+              <p className="text-darkblue font-extrabold">453,000 USDC </p>{" "}
               <p>347 Investors</p>
             </div>
             <div className="m-4 p-4 rounded-xl flex flex-row justify-between bg-lightblue">

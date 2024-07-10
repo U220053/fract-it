@@ -14,6 +14,8 @@ import lock from ".././assets/lock.png";
 import Modal from "./Modal";
 import ModalBody from "./ModalBody";
 import "./Property.css";
+import Link from "next/link";
+import "../Cliffton-inhp1001/page";
 
 // Sample data array containing property information
 const properties = [
@@ -21,33 +23,21 @@ const properties = [
     image: img1,
     location: "Shimla",
     title: "3 BHK Luxury Apartment in Cliffton Valley - Shimla",
-    price: "453 PUSD",
-    investors: "347 investors",
-    apy: "6.07%",
-    treasuryValue: "$18,888.30",
+    price: "235,000 USDC",
+    investors: "17 investors",
+    apy: "12.07%",
+    treasuryValue: "235,000 USDC",
     value: "3",
     img: india,
     type: " Holiday Home",
     text: "This property is coming soon",
   },
-  {
-    image: property2,
-    location: "Dubai",
-    title: "2 BHK Apartment in Princess Tower - Dubai Marina",
-    price: "2,200 PUSD",
-    investors: "215 investors",
-    apy: "5.80%",
-    treasuryValue: "$21,500.50",
-    value: "2",
-    img: dubai,
-    type: "Rental",
-    text: "Coming soon",
-  },
+
   {
     image: property3,
     location: "Toronto",
     title: "1 BHK Apartment in 1 BLOOR ST E - Toronto",
-    price: "1,800 PUSD",
+    price: "1,800 USDC",
     investors: "182 investors",
     apy: "5.95%",
     treasuryValue: "$17,200.75",
@@ -57,10 +47,23 @@ const properties = [
     text: "Coming soon",
   },
   {
+    image: property2,
+    location: "Dubai",
+    title: "2 BHK Apartment in Princess Tower - Dubai Marina",
+    price: "2,200 USDC",
+    investors: "215 investors",
+    apy: "5.80%",
+    treasuryValue: "$21,500.50",
+    value: "2",
+    img: dubai,
+    type: "Rental",
+    text: "Coming soon",
+  },
+  {
     image: property4,
     location: "London",
     title: "2 BHK Apartment in One Park Drive - London",
-    price: "3,500 PUSD",
+    price: "3,500 USDC",
     investors: "400 investors",
     apy: "6.20%",
     treasuryValue: "$35,000.00",
@@ -136,7 +139,7 @@ const Propertytest = () => {
               <p className="text-sm font-poppins leading-4 mt-2 font-bold">
                 {property.title}
               </p>
-              <div className="container">
+              {/* <div className="container">
                 <div className="glass"></div>
                 <div className="text-overlay">
                   <p className="text-center">{property.text}</p>
@@ -186,6 +189,53 @@ const Propertytest = () => {
                   <p className="text-xs font-bold font-poppins leading-4 cursor-pointer">
                     DETAILS
                   </p>
+                </div>
+              </div> */}
+              <div className="container">
+                {index !== 0 && (
+                  <>
+                    <div className="glass"></div>
+                    <div className="text-overlay">
+                      <p className="text-center">{property.text}</p>
+                      <Image
+                        src={lock}
+                        className="ml-12 max-sm:ml-10"
+                        alt="alt"
+                      />
+                    </div>
+                  </>
+                )}
+                <div className="flex justify-between items-center mt-4 ">
+                  <p className="text-sm font-poppins leading-4 font-bold text-blue-700">
+                    {property.price}
+                  </p>
+                  <p className="text-xs font-poppins leading-4">
+                    {property.investors}
+                  </p>
+                </div>
+                <div className="mt-4 bg-green">
+                  <div className=" rounded-md text-xs text-black px-4 py-2 flex justify-between">
+                    <p>APY</p>
+                    <p className="font-bold">{property.apy}</p>
+                  </div>
+                  <div className=" rounded-md text-xs text-black mt-2 px-4 py-2 flex justify-between">
+                    <p>CURRENT PRICE</p>
+                    <p className="font-bold">{property.treasuryValue}</p>
+                  </div>
+                </div>
+                <div className="mt-4 flex justify-between">
+                  {/* <button className="bg-blue  text-white px-10 md:px-20 py-2 md:py-4 rounded-md font-bold"> */}
+                  <button
+                    className="bg-blue text-white px-10 md:px-20 py-2 md:py-4 rounded-md font-bold  cursor-not-allowed"
+                    disabled
+                  >
+                    Sold Out
+                  </button>
+                  <Link href="/Cliffton-inhp1001">
+                    <button className="text-xs md:text-sm font-bold font-poppins leading-4 cursor-pointer mr-10 md:mr-20 mt-2 md:mt-4">
+                      DETAILS
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

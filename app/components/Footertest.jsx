@@ -196,7 +196,7 @@ const Footertest = () => {
       <div className="w-full border-t border-gray my-4"></div>
       <div className="w-full flex justify-center px-4">
         <p className="font-poppins text-sm font-medium opacity-40">
-          © 2024 Fractit. All rights reserved.
+          © 2024 Fractit. All rights reserved | Entravy Pvt. Ltd.
         </p>
       </div>
     </div>

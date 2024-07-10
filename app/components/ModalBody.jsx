@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import * as Yup from "yup";
 import Image from "next/image";
@@ -80,7 +82,11 @@ const ModalBody = ({ onCloseModal }) => {
           mode: "no-cors",
         }
       );
-      alert("Successfully subscribed!");
+      // alert("Successfully subscribed!");
+      toast.success("Successfully joined!", {
+        position: "top-center",
+        toastStyle: { marginTop: "2rem" },
+      });
       onCloseModal();
     } catch (err) {
       // console.error(err);
@@ -93,21 +99,25 @@ const ModalBody = ({ onCloseModal }) => {
         setErrors(newErrors);
       } else {
         console.error(err);
-        alert("Failed to submit to waitlist");
+        // alert("Failed to submit to waitlist");
+        toast.error("Failed to join!", {
+          position: "top-center",
+          toastStyle: { marginTop: "2rem" },
+        });
       }
     } finally {
       setIsSubmitting(false); // Set isSubmitting back to false when submission completes
     }
   };
   return (
-    <div className="flex  md:flex-row md:w-[50rem] md:h-[36rem] gap-1 md:gap-5 ">
-      <div className="w-[17.84rem] h-[34.73] rounded-md bg-darkblue">
+    <div className="flex  md:flex-row md:w-[50rem] md:h-[36rem] gap-1 md:gap-5 max-sm:h-auto ">
+      <div className="w-[17.84rem] h-[34.73] rounded-md bg-darkblue max-sm:hidden">
         <div className="mt-20">
           <Image src={house} alt="home" />
         </div>
       </div>
 
-      <div className="flex flex-col mt-16">
+      <div className="flex flex-col mt-16 max-sm:mt-0">
         <button
           onClick={onCloseModal}
           // className="absolute "

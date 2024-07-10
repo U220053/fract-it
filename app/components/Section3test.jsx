@@ -3,6 +3,7 @@ import Image from "next/image";
 import building from ".././assets/building.png";
 import building2 from ".././assets/image 17.png";
 import building3 from ".././assets/image 18.png";
+import DataTable from "./Grid";
 
 const Section3test = () => {
   return (
@@ -12,6 +13,7 @@ const Section3test = () => {
           It's Easy to Get Started.
         </p>
       </div>
+
       <div className="w-full max-w-screen-xl mx-auto grid grid-cols-1 gap-6 lg:grid-cols-3">
         <div className="w-full lg:w-auto  rounded-3xl flex flex-col justify-center items-center hover:shadow-lg pb-4">
           <div className="w-64 h-64 mb-6 rounded-3xl flex justify-center items-center bg-blue2">
