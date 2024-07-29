@@ -1,41 +1,22 @@
 {
   "pages": {
-    "/_not-found": [
-      "static/chunks/webpack-0aaeea83d4a71b7c.js",
-      "static/chunks/fd9d1056-aa633e1044671c7f.js",
-      "static/chunks/69-6677cf182c1c502e.js",
-      "static/chunks/main-app-999e4391be396b81.js",
-      "static/chunks/app/_not-found-92619eb00280f22e.js"
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/page.css",
+      "static/chunks/app/page.js"
     ],
     "/layout": [
-      "static/chunks/webpack-0aaeea83d4a71b7c.js",
-      "static/chunks/fd9d1056-aa633e1044671c7f.js",
-      "static/chunks/69-6677cf182c1c502e.js",
-      "static/chunks/main-app-999e4391be396b81.js",
-      "static/css/3cbd70ff48da2307.css",
-      "static/chunks/app/layout-b8386d6c861a58c9.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
     ],
     "/Cliffton-inhp1001/page": [
-      "static/chunks/webpack-0aaeea83d4a71b7c.js",
-      "static/chunks/fd9d1056-aa633e1044671c7f.js",
-      "static/chunks/69-6677cf182c1c502e.js",
-      "static/chunks/main-app-999e4391be396b81.js",
-      "static/chunks/322-c287eaee53d0e132.js",
-      "static/css/859217db304e7d13.css",
-      "static/css/fb9a9af3f6f81ba5.css",
-      "static/chunks/app/Cliffton-inhp1001/page-908e8d0bbb1897d8.js"
-    ],
-    "/page": [
-      "static/chunks/webpack-0aaeea83d4a71b7c.js",
-      "static/chunks/fd9d1056-aa633e1044671c7f.js",
-      "static/chunks/69-6677cf182c1c502e.js",
-      "static/chunks/main-app-999e4391be396b81.js",
-      "static/chunks/322-c287eaee53d0e132.js",
-      "static/css/21864b162490d9d5.css",
-      "static/chunks/578-11f42bdf0a40a45e.js",
-      "static/css/859217db304e7d13.css",
-      "static/css/f6a34427d36bd938.css",
-      "static/chunks/app/page-ca95c330cca6b5dc.js"
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/Cliffton-inhp1001/page.css",
+      "static/chunks/app/Cliffton-inhp1001/page.js"
     ]
   }
 }
