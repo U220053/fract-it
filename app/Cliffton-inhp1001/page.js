@@ -10,9 +10,9 @@ export default function Home() {
     // h-fit
     <div
       className="min-h-screen pb-48 "
-      style={{
-        backgroundImage: "linear-gradient(to right, #e6ebff, #BCF7E1)",
-      }}
+      // style={{
+      //   backgroundImage: "linear-gradient(to right, #e6ebff, #BCF7E1)",
+      // }}
     >
       <NavBar />
       <Redeem />
