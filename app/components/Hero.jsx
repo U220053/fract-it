@@ -62,17 +62,38 @@ const Hero = () => {
               property-backed tokenised investments with benefits of DeFi
             </p>
           </div>
-          <div>
+          <div className="flex md:flex-row flex-col gap-y-2 md:gap-x-2 ">
             <div
               className=" md:w-[16.25rem] md:h-[3.8rem] rounded-md bg-lightblue 
   text-black font-bold flex items-center justify-center"
             >
-              <div className="md:px-2 py-1">
+              <div className="md:pr-1 py-1">
                 <Image src={chakra} width={50} height={20} />
               </div>
+
               <div className="flex flex-col items-center justify-center">
-                <p>Total Value Locked</p>
-                <p className="text-darkblue ">$235,000</p>
+                <a
+                  href="https://example.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <p>Total Value Locked</p>
+                  <p className="text-darkblue ">$235,000</p>
+                </a>
+              </div>
+            </div>
+            <div
+              className=" md:w-[16.25rem] md:h-[3.8rem] rounded-md bg-darkblue 
+  text-white font-bold flex items-center justify-center p-4 md:p-0"
+            >
+              <div className="flex flex-col items-center justify-center">
+                <a
+                  href="https://beta-testnet.fractit.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <p>Launch App</p>
+                </a>
               </div>
             </div>
           </div>

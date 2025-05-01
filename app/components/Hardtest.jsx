@@ -68,7 +68,7 @@ const Hard = () => {
             <div className="text-center">
               <p className="font-bold">Monthly rental yield</p>
               <p>
-                Steady passive earnings generated through monthly rental yeilds.
+                Steady passive earnings generated through monthly rental yields.
               </p>
             </div>
           </div>

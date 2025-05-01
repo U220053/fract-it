@@ -2,9 +2,9 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import img1 from ".././assets/property1.webp";
-import property2 from ".././assets/property2.jpg";
-import property3 from ".././assets/property3.webp";
-import property4 from ".././assets/property4.webp";
+import property2 from ".././assets/jw.png";
+import sparkle from ".././assets/sparkle.webp";
+import property4 from ".././assets/fountain.png";
 import img2 from ".././assets/icons8-bed-24.png";
 import india from ".././assets/icons8-india-48.png";
 import canada from ".././assets/icons8-canada-48.png";
@@ -25,7 +25,7 @@ const properties = [
     title: "3 BHK Luxury Apartment in Cliffton Valley - Shimla",
     price: "235,000 USDC",
     investors: "17 investors",
-    apy: "12.07%",
+    apy: "6.38%",
     treasuryValue: "235,000 USDC",
     value: "3",
     img: india,
@@ -34,42 +34,42 @@ const properties = [
   },
 
   {
-    image: property3,
-    location: "Toronto",
-    title: "1 BHK Apartment in 1 BLOOR ST E - Toronto",
-    price: "1,800 USDC",
-    investors: "182 investors",
-    apy: "5.95%",
-    treasuryValue: "$17,200.75",
+    image: sparkle,
+    location: "Dubai",
+    title: "1 BHK Apartment in Princess Tower - Dubai Marina",
+    price: "595,400 USDC",
+    investors: "215 investors",
+    apy: "9.80%",
+    treasuryValue: "595,400 USDC",
     value: "1",
-    img: canada,
-    type: "Rental",
+    img: dubai,
+    type: "Apartment",
     text: "Coming soon",
   },
   {
     image: property2,
     location: "Dubai",
-    title: "2 BHK Apartment in Princess Tower - Dubai Marina",
-    price: "2,200 USDC",
+    title: "JW Marriott Hotel Marina - Dubai",
+    price: "830,860 USDC",
     investors: "215 investors",
-    apy: "5.80%",
+    apy: "11%",
     treasuryValue: "$21,500.50",
-    value: "2",
+    value: "1",
     img: dubai,
-    type: "Rental",
+    type: "Apartment",
     text: "Coming soon",
   },
   {
     image: property4,
-    location: "London",
-    title: "2 BHK Apartment in One Park Drive - London",
-    price: "3,500 USDC",
+    location: "Dubai",
+    title: "Fountain Views Tower 2 - Dubai",
+    price: "1,362,398 USDC",
     investors: "400 investors",
-    apy: "6.20%",
+    apy: "7%",
     treasuryValue: "$35,000.00",
     value: "2",
-    img: london,
-    type: "Rental",
+    img: dubai,
+    type: "Apartment",
     text: "Coming soon",
   },
 ];
@@ -139,60 +139,9 @@ const Propertytest = () => {
               <p className="text-sm font-poppins leading-4 mt-2 font-bold">
                 {property.title}
               </p>
-              {/* <div className="container">
-                <div className="glass"></div>
-                <div className="text-overlay">
-                  <p className="text-center">{property.text}</p>
-                  {index === 0 && (
-                    // <button className="bg-blue w-full text-white px-4 py-2 rounded-md font-bold flex justify-center items-center mt-2">
-                    //   Join Waitlist
-                    // </button>
-                    <button
-                      onClick={handleOpenModal}
-                      className="bg-blue w-full text-white px-4 py-2 rounded-md font-bold flex justify-center items-center mt-2"
-                      // className="w-full md:w-[16.25rem] h-[3.8rem] rounded-md bg-black text-white font-bold"
-                    >
-                      Join Waitlist
-                    </button>
-                  )}
-                  {index !== 0 && (
-                    <Image
-                      src={lock}
-                      className="ml-12 max-sm:ml-10"
-                      alt="alt"
-                    />
-                  )}
-                </div>
-                <div className="flex justify-between items-center mt-4 ">
-                  <p className="text-sm font-poppins leading-4 font-bold text-blue-700">
-                    {property.price}
-                  </p>
-                  <p className="text-xs font-poppins leading-4">
-                    {property.investors}
-                  </p>
-                </div>
-                <div className="mt-4 bg-green">
-                  <div className=" rounded-md text-xs text-black px-4 py-2 flex justify-between">
-                    <p>APY</p>
-                    <p className="font-bold">{property.apy}</p>
-                  </div>
-                  <div className=" rounded-md text-xs text-black mt-2 px-4 py-2 flex justify-between">
-                    <p>VALUE IN TREASURY</p>
-                    <p className="font-bold">{property.treasuryValue}</p>
-                  </div>
-                </div>
 
-                <div className="mt-4 flex justify-between">
-                  <button className="bg-blue  text-white px-4 py-2 rounded-md font-bold">
-                    Invest Now
-                  </button>
-                  <p className="text-xs font-bold font-poppins leading-4 cursor-pointer">
-                    DETAILS
-                  </p>
-                </div>
-              </div> */}
               <div className="container">
-                {index !== 0 && (
+                {index !== 0 && index !== 1 && (
                   <>
                     <div className="glass"></div>
                     <div className="text-overlay">
@@ -225,17 +174,48 @@ const Propertytest = () => {
                 </div>
                 <div className="mt-4 flex justify-between">
                   {/* <button className="bg-blue  text-white px-10 md:px-20 py-2 md:py-4 rounded-md font-bold"> */}
-                  <button
+                  {index === 0 ? (
+                    <button
+                      className="bg-blue text-white px-10 md:px-20 py-2 md:py-4 rounded-md font-bold  cursor-not-allowed"
+                      disabled
+                    >
+                      Sold Out
+                    </button>
+                  ) : (
+                    <button
+                      className="bg-blue text-white px-10 md:px-20 py-2 md:py-4 rounded-md font-bold  cursor-not-allowed"
+                      disabled
+                    >
+                      Buy Now
+                    </button>
+                  )}
+                  {/* <button
                     className="bg-blue text-white px-10 md:px-20 py-2 md:py-4 rounded-md font-bold  cursor-not-allowed"
                     disabled
                   >
                     Sold Out
-                  </button>
-                  <Link href="/Cliffton-inhp1001">
-                    <button className="text-xs md:text-sm font-bold font-poppins leading-4 cursor-pointer mr-10 md:mr-20 mt-2 md:mt-4">
-                      DETAILS
-                    </button>
-                  </Link>
+                  </button> */}
+                  {index === 0 ? (
+                    <Link
+                      href="https://beta-testnet.fractit.com/listing-details-v1/1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <button className="text-xs md:text-sm font-bold font-poppins leading-4 cursor-pointer mr-10 md:mr-20 mt-2 md:mt-4">
+                        DETAILS
+                      </button>
+                    </Link>
+                  ) : (
+                    <Link
+                      href="https://beta-testnet.fractit.com/listing-details-v1/2"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <button className="text-xs md:text-sm font-bold font-poppins leading-4 cursor-pointer mr-10 md:mr-20 mt-2 md:mt-4">
+                        DETAILS
+                      </button>
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>
